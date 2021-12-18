@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo Dom JavaScript</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo Dom con JavaScript</h1>
+    <br/>
+    Nombre: <input type="text" id="nombre"/>
+    <br/><br/>
+    Apellido: <input type="text" id="apellido"/>
+    <br/>
+    <script>
+        document.getElementById("nombre").addEventListener("focus", (evento)=>{
+            evento.target.style.background = "pink";
+        });
+        document.getElementById("nombre").addEventListener("blur", (evento)=>{
+            evento.target.style.background = "white";
+        });
+
+        document.getElementById("apellido").addEventListener("focus", cambiar);
+        document.getElementById("apellido").addEventListener("blur", volver);
+        
+        function cambiar(evento){
+            evento.target.style.background = "yellow";
+        }
+
+        function volver(evento){
+            evento.target.style.background = "white";
+        }
+    </script>
+</body>
+</html>
